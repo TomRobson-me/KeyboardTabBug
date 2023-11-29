@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KeyboardTabBug.ModalPage"
+             BackgroundColor="#40808080"
+             Title="ModalPage">
+
+  <Grid RowDefinitions="*,Auto,4*"
+        ColumnDefinitions="4*,2*,*">
+    <Frame  BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}"
+            BorderColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}"
+            Padding="30,30"
+            Grid.Row="1"
+            Grid.Column="1">
+      <VerticalStackLayout Spacing="25">
+        <Label Text="Now tab around and you'll see that the page behind gets focus"
+               Style="{StaticResource SubHeadline}"
+               SemanticProperties.HeadingLevel="Level2"
+               SemanticProperties.Description="Now tab around and you'll see that the page behind gets focus" />
+
+        <Button x:Name="CloseModal"
+                Text="Close Modal"
+                SemanticProperties.Hint="Closes the modal page"
+                Clicked="CloseModal_Clicked"
+                HorizontalOptions="Fill" />
+      </VerticalStackLayout>
+    </Frame>
+  </Grid>
+
+</ContentPage>
